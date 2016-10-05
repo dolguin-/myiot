@@ -43,4 +43,4 @@ EventsRepo.prototype.save = function(params) {
       console.error(error);
     });
 
-}
+};
