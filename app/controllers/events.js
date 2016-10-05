@@ -26,11 +26,12 @@ Events.prototype.EventsGet = function (req, res) {
 };
 
 Events.prototype.EventsPost = function (req, res) {
-	var events = new EventsEntity();
-	events.device_id = req.body.device_id;
-	events.dateTime = req.body.dateTime;
-	events.duracion = req.body.duracion;
-	events.message = req.body.message;
-	events.save();
-	res.json({status: 'saved'});
+	var events = new EventsRepo();
+	var fields = {};
+	fields.device_id = req.body.device_id;
+	fields.date_time = req.body.date_time || Knex.fn.now();
+	fields.duracion = req.body.duracion;
+	fields.message = req.body.message;
+	events.save(fields);
+	res.json({status: 'ok'});
 };
