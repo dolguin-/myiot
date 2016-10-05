@@ -1,4 +1,3 @@
-var DbEntity = require('../entities/dbentity');
 
 module.exports = Events;
 
@@ -11,7 +10,5 @@ function Events(params) {
     'duracion',
     'message'
   ];
-  DbEntity.call(this, params);
 };
-
-Events.prototype = Object.create(DbEntity.prototype);
+	
