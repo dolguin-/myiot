@@ -1,0 +1,15 @@
+db:
+  image: mysql:5.6
+  ports:
+    - "3306:3306"
+  env_file:
+    - 'env/development/.env.db'
+service:
+  build: .
+  volumes:
+    - .:/myiot
+  links:
+    - db
+  env_file:
+    - 'env/development/.env.service'
+

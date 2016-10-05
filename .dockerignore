@@ -1,0 +1,8 @@
+.dockerignore
+Dockerfile
+env
+node_modules
+docker-compose*
+.gitignore
+.git
+ecs-definition-*
